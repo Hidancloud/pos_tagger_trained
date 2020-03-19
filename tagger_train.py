@@ -121,7 +121,6 @@ class LSTMTagger(nn.Module):
         #print('lstm input:')
         #print(input.shape)
 
-        # fcking shit is below:
         lstm_out, _ = self.lstm(input.view(len(sentence), 1, -1))
         tag_space = self.hidden2tag(lstm_out.view(len(sentence), -1))
         #print('before log_softmax')
